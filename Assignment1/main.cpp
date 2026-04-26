@@ -1,32 +1,35 @@
+// Assignment No.  1
+
 #include <iostream>
 #include <string>
-#include <cctype>   // for isdigit
+#include <cctype>
 using namespace std;
 
 int main() {
     string name = "Imtiaz Ali";
-    string vuId = "BS123456789";
+    string stuId = "BC260200954";
 
     cout << "==============================\n";
     cout << "Name  : " << name << endl;
-    cout << "VU ID : " << vuId << endl;
+    cout << "Student ID : " << stuId << endl;
     cout << "==============================\n";
 
     // Extract numeric part
     string numericPart = "";
 
-    for (char ch : vuId) {
+    for (char ch : stuId)
+    {
         if (isdigit(ch)) {
             numericPart += ch;
         }
     }
 
-    cout << "\nDigits: ";
+    cout << "\nDigits in ID: ";
     for (char ch : numericPart) {
         cout << ch << " ";
     }
 
-    cout << "\nReversed: ";
+    cout << "\nReversed numeric part: ";
     for (int i = numericPart.length() - 1; i >= 0; i--) {
         cout << numericPart[i] << " ";
     }
@@ -43,14 +46,14 @@ int main() {
         if (digit < minDigit) minDigit = digit;
     }
 
-    cout << "\nAbsent digits: ";
+    cout << "\n\nAbsent digits: ";
     for (int i = 0; i < 10; i++) {
         if (!present[i]) {
             cout << i << " ";
         }
     }
 
-    cout << "\nEven digits: ";
+    cout << "\n\nEven digits: ";
     for (char ch : numericPart) {
         int digit = ch - '0';
         if (digit % 2 == 0) cout << digit << " ";
@@ -62,7 +65,7 @@ int main() {
         if (digit % 2 != 0) cout << digit << " ";
     }
 
-    cout << "\nLargest digit: " << maxDigit;
+    cout << "\n\nLargest digit: " << maxDigit;
     cout << "\nSmallest digit: " << minDigit;
 
     cout << "\n\nMultiplication Table of " << maxDigit << ":\n";
